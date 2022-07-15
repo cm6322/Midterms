@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
 
-
+                Bill resultingBill = new Bill(etPrev,etCurr,,packageNumber,month);
             }
         });
     }
