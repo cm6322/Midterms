@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -51,7 +52,35 @@ public class MainActivity extends AppCompatActivity {
 
     // // TODO Milestone 3: Calculate bill.
     private void btnCalculateListenerMethod() {
+        Button btnCalculate = findViewById(R.id.btnCalculate);
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int packageNumber;
+                EditText etPrev = findViewById(R.id.etPrev);
+                EditText etCurr = findViewById(R.id.etNew);
 
+                Spinner spPipe = findViewById(R.id.spPipe);
+
+                RadioGroup pack = findViewById(R.id.packageRadioGroup);
+                int selectedId = pack.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) findViewById(selectedId);
+                String selectedPackage = (String) radioButton.getText();
+                switch(selectedPackage){
+                    case "Basic":
+                        packageNumber = 1;
+                        break;
+                    case "Regular":
+                        packageNumber = 2;
+                        break;
+                    case "Premium":
+                        packageNumber = 3;
+                        break;
+                }
+
+
+            }
+        });
     }
 
     /**
