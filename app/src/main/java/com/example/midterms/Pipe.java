@@ -23,9 +23,5 @@ public class Pipe {
         this.diameter = diameter;
     }
 
-    @Override
-    public String toString() {
-        return brand + " (" + diameter +
-                ")";
-    }
+
 }
